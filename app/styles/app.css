@@ -1,0 +1,30 @@
+@import "./side-nav.css";
+@import "./main-content.css";
+
+html {
+  font-family: "Lato", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  color: #575757;
+}
+
+body {
+  background-color: #E5E5E5
+}
+
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 40px 92px;
+}
+
+.text_overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

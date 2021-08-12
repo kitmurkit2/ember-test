@@ -1,0 +1,18 @@
+<div class="side-bar__inner-container">
+  <h3 class="side-bar__title">Asset type</h3>
+
+  <MultiselectCheckboxes
+    @class="side-bar__list"
+    @options={{options}}
+    @selection={{selection}}
+    @onchange={{action "updateSelection"}}
+    as |item isChecked|>
+    <li class="side-bar__list__item">
+        <Input @type="checkbox" @class="mr-8" @checked={{isChecked}} @onChange={{action "check_cb"}}/>
+        <span class="material-icons-outlined md-18 pr-6">{{item.icon}}</span>
+        <span>
+          {{item.name}}
+        </span>
+    </li>
+  </MultiselectCheckboxes>
+</div>

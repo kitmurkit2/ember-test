@@ -1,0 +1,45 @@
+.pr-6 {
+  padding-right: 6px;
+}
+
+.pr-8 {
+  padding-right: 8px;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.side-bar__container {
+  min-width: 270px;
+  max-width: 279px;
+  padding-right: 22px;
+}
+
+.side-bar__inner-container {
+  background-color: white;
+  padding: 1.5rem 1rem;
+}
+
+.side-bar__title {
+  padding-bottom: 10px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.side-bar__list {
+  padding-left: 0;
+  margin: 0;
+  list-style: none
+}
+
+.side-bar__list__item {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.material-icons-outlined.md-18{
+  font-size: 18px;
+}

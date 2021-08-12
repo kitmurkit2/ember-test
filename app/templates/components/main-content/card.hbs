@@ -1,0 +1,75 @@
+<div class="card__image-container {{if isArticle 'article_height'}}">
+  <div class="card__image-container_overlay">
+    <span class="material-icons-outlined card__bookmark {{if isSaved 'card__bookmark_saved'}}" onClick={{action "markSaved"}}>
+      {{if isSaved "bookmark" "bookmark_border"}}
+    </span>
+
+    <div class="card__info">
+      <div class="card__info__text">
+        <div class="card__info__counter">{{advert.used-total-count}}</div>
+        <span class="card__info__used">Used (total)</span>
+      </div>
+
+      {{#if (is-equal advert.type 3)}}
+        <a class="button button_transparent" target="_blank" href={{advert.original-file-src}}>Download</a>
+      {{else}}
+        <button class="button button_blue" {{action use}}>Use</button>
+      {{/if}}
+    </div>
+  </div>
+
+  {{#if advert.preview-image}}
+    <img class="{{if isArticle 'article_height'}}" src={{advert.preview-image}} alt="On this image you can see picture of advertisement"/>
+  {{else}}
+    <div class="card__empty-image">
+      <span class="material-icons-outlined card__empty-image__icon">view_headline</span>
+    </div>
+  {{/if}}
+</div>
+
+<div class="card__description-container">
+  <div class="card__title text_overflow">
+    <span class="material-icons-outlined md-18 card__title_icon">{{get options advert.type}}</span>
+    <span>{{advert.title}}</span>
+  </div>
+
+  {{#if advert.tags}}
+    <div>
+
+      {{#each displayedTags as |tag|}}
+        <div class="tag">{{tag}}</div>
+      {{/each}}
+
+      {{#if nonDisplayedTags.length}}
+        <div class="tag">
+          +{{nonDisplayedTags.length}}
+          <EmberTooltip @side="top-end" @tooltipClass="tag__tooltip">
+            {{#each nonDisplayedTags as |tag|}}
+              <div class="tag">{{tag}}</div>
+            {{/each}}
+          </EmberTooltip>
+        </div>
+      {{/if}}
+
+    </div>
+  {{/if}}
+
+  {{#if isArticle}}
+    <a href={{advert.external-link.href}} target="_blank">
+      <div class="article_info text_overflow">
+        <div>
+          <span class="material-icons-outlined md-18" style="vertical-align: bottom;">link</span>
+        </div>
+        <div class="text_overflow">
+          <div class="article-text">
+            <span>{{advert.external-link.title}}</span>
+          </div>
+          <div class="article-text article-text__link">
+            <span>{{advert.external-link.href}}</span>
+          </div>
+        </div>
+
+      </div>
+    </a>
+  {{/if}}
+</div>
